@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parrot Games</title>
+    <meta name="description" content="Discover a variety of engaging websites and Games.">
+    <meta name="keywords" content="Parrot Games, 2D games">
     <link rel="shortcut icon" href="images/Parrot.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
@@ -14,15 +16,15 @@
     <nav>
         <ul>
             <div class="left">
-                <li><img src="images/Parrot.png" alt="logo"></li>
+                <li><img src="images/parakeet_Circle_Logo.png" alt="Parrot Games logo"></li>
                 <li><a href="https://parrotgames.github.io" class="logo">Parrot Games</a></li>
             </div>
             <div class="right" id="menuItems">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#websites">Websites</a></li>
-                <li><a href="#">Youtube</a></li>
+                <li><a href="#youtube">YouTube</a></li>
             </div>
-            <div class="hamburger-icon" id="hamburgerIcon">
+            <div class="hamburger-icon" id="hamburgerIcon" aria-label="Toggle menu">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -32,7 +34,7 @@
 
     <main>
         <section id="home">
-            <img width="100%" src="images/1.png" alt="img">
+            <img width="100%" src="images/1.png" alt="Parrot Games homepage image">
         </section>
 
         <section id="cta">
@@ -49,26 +51,33 @@
                 <div class="website-card">
                     <h3>Parrot Games</h3>
                     <p>Varieties of 2D games.</p>
-                    <a target="_blank" href="https://parrotgames.github.io/1">Visit Website 1</a>
+                    <a target="_blank" href="https://parrotgames.github.io/1">Visit Website</a>
                 </div>
                 <div class="website-card">
                     <h3>Website 2</h3>
                     <p>Coming soon.</p>
-                    <a target="_blank"">Visit Website 2</a>
+                    <a target="_blank">Visit Website 2</a>
                 </div>
-                <div class=" website-card">
-                        <h3>Website 3</h3>
-                        <p>Coming soon.</p>
-                        <a target="_blank">Visit Website 3</a>
+                <div class="website-card">
+                    <h3>Website 3</h3>
+                    <p>Coming soon.</p>
+                    <a target="_blank">Visit Website 3</a>
                 </div>
             </div>
         </section>
-        <a target="_blank" href="https://www.youtube.com">
-            <div class="ytbox">
-                <img src="images/parakeet_Circle_Logo.png" alt="">
-            </div>
-        </a>
+
+        <section id="youtube">
+            <h2>Our YouTube Channel</h2>
+            <p>Check out our latest videos.</p>
+            <a href="https://www.youtube.com/channel/YourChannelID" target="_blank" class="yt-button">Visit YouTube</a>
+        </section>
     </main>
+
+    <a href="https://parrotgames.github.io" aria-label="Go to Parrot Games website">
+        <div class="ytbox">
+            <img src="images/parakeet_Circle_Logo.png" alt="Parrot Games logo">
+        </div>
+    </a>
 
     <script>
         const hamburgerIcon = document.getElementById('hamburgerIcon');
@@ -78,7 +87,6 @@
             menuItems.classList.toggle('show');
             hamburgerIcon.classList.toggle('active');
         });
-
     </script>
 </body>
 
