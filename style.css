@@ -62,7 +62,8 @@ nav ul div {
 
 nav ul .right {
     position: relative;
-    right: 40px;
+    width: 20%;
+    left: 350px;
 }
 
 nav ul li img {
@@ -74,11 +75,12 @@ nav ul li img {
 }
 
 .ytbox {
+    z-index: 1000;
     cursor: pointer;
-    position: sticky;
+    position: fixed;
     float: right;
-    right: 10px;
-    bottom: 10px;
+    right: 20px;
+    bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,9 +92,116 @@ nav ul li img {
 }
 
 .ytbox img {
+    width: 50px;
     height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.ytbox img:hover {
+    transform: scale(1.1);
 }
 
 main {
     height: 1000px;
+}
+
+main #home {
+    padding-top: 50px;
+}
+
+main #home img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+#cta {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#cta h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#cta p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #188502;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #065f0e;
+}
+
+
+#websites {
+    padding: 50px 20px;
+}
+
+#websites h2 {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.websites-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.website-card {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.website-card:hover {
+    transform: translateY(-5px);
+}
+
+.website-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.website-card p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.website-card a {
+    display: inline-block;
+    background-color: #188502;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.website-card a:hover {
+    background-color: #065f0e;
 }
