@@ -10,10 +10,40 @@
         width: 100%;
         flex-direction: column;
         text-align: center;
+        animation: hamburgerFadeOut 0.3s ease forwards;
     }
 
     nav ul .right.show {
         display: flex;
+        animation: hamburgerFadeIn 0.3s ease forwards;
+    }
+
+    @keyframes hamburgerFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes hamburgerFadeOut {
+        from {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        to {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    }
+
+    nav ul #menuItems li {
+        margin-top: 10px;
     }
 
     .hamburger-icon {
@@ -50,60 +80,6 @@
 
     nav {
         height: 70px;
-    }
-}
-
-@media (max-width: 1200px) {
-    nav ul .right {
-        left: 300px;
-    }
-}
-
-@media (max-width: 1110px) {
-    nav ul .right {
-        left: 250px;
-    }
-}
-
-@media (max-width: 1020px) {
-    nav ul .right {
-        left: 200px;
-    }
-}
-
-@media (max-width: 950px) {
-    nav ul .right {
-        left: 150px;
-    }
-}
-
-@media (max-width: 870px) {
-    nav ul .right {
-        left: 120px;
-    }
-}
-
-@media (max-width: 810px) {
-    nav ul .right {
-        left: 80px;
-    }
-}
-
-@media (max-width: 750px) {
-    nav ul .right {
-        left: 50px
-    }
-}
-
-@media (max-width: 700px) {
-    nav ul .right {
-        left: 20px
-    }
-}
-
-@media (max-width: 650px) {
-    nav ul .right {
-        left: 0;
     }
 }
 
