@@ -10,6 +10,9 @@
     <link rel="shortcut icon" href="images/Parrot.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -17,12 +20,12 @@
         <ul>
             <div class="left">
                 <li><img src="images/parakeet_Circle_Logo.png" alt="Parrot Games logo"></li>
-                <li><a href="https://parrotgames.github.io" class="logo">Parrot Games</a></li>
+                <li><a href="https://parrotgames.github.io" class="logo">PARROT GAMES</a></li>
             </div>
             <div class="right" id="menuItems">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#websites">Websites</a></li>
-                <li><a href="#youtube">YouTube</a></li>
+                <li><a href="#home" data-target="home">Home</a></li>
+                <li><a href="#websites" data-target="websites">Websites</a></li>
+                <li><a href="#youtube" data-target="youtube">YouTube</a></li>
             </div>
             <div class="hamburger-icon" id="hamburgerIcon" aria-label="Toggle menu">
                 <div></div>
@@ -41,7 +44,7 @@
             <div class="cta-content">
                 <h2>Discover Our Websites</h2>
                 <p>Explore a variety of engaging websites.</p>
-                <a href="#websites" class="cta-button">Explore Now</a>
+                <a href="#websites" class="cta-button" data-target="websites">Explore Now</a>
             </div>
         </section>
 
@@ -69,7 +72,7 @@
         <section id="youtube">
             <h2>Our YouTube Channel</h2>
             <p>Check out our latest videos.</p>
-            <a class="yt-button">Visit YouTube</a>
+            <a href="https://www.youtube.com/channel/YourChannelID" target="_blank" class="yt-button">Visit YouTube</a>
         </section>
     </main>
 
@@ -84,8 +87,40 @@
         const menuItems = document.getElementById('menuItems');
 
         hamburgerIcon.addEventListener('click', () => {
-            menuItems.classList.toggle('show');
+            if (menuItems.classList.contains('show')) {
+                menuItems.style.animation = 'hamburgerFadeOut 0.3s ease forwards';
+                setTimeout(() => {
+                    menuItems.classList.remove('show');
+                }, 300);
+            } else {
+                menuItems.classList.add('show');
+                menuItems.style.animation = 'hamburgerFadeIn 0.3s ease forwards';
+            }
             hamburgerIcon.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                window.scroll({
+                    top: targetElement.offsetTop - document.querySelector('nav').offsetHeight,
+                    behavior: 'smooth'
+                });
+
+                // Close the mobile menu if open
+                const menuItems = document.getElementById('menuItems');
+                if (menuItems.classList.contains('show')) {
+                    menuItems.style.animation = 'hamburgerFadeOut 0.3s ease forwards';
+                    setTimeout(() => {
+                        menuItems.classList.remove('show');
+                    }, 300);
+                    document.getElementById('hamburgerIcon').classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
