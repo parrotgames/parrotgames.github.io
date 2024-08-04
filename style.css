@@ -123,12 +123,11 @@ nav ul li img {
 }
 
 main #home {
-    padding-top: 60px;
-}
-
-main #home img {
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    background-image: url('images/1.png');
+    background-position-x: center;
+    background-size: cover;
 }
 
 #cta {
@@ -254,3 +253,4 @@ main #home img {
 .yt-button:hover {
     background-color: #cc0000;
 }
+
