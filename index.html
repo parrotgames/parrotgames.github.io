@@ -16,6 +16,20 @@
 </head>
 
 <body>
+    <div id="loadingScreen">
+        <div id="loading-container">
+            <svg viewBox="0 0 100 100">
+                <defs>
+                    <filter id="shadow">
+                        <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#25c5ff" />
+                    </filter>
+                </defs>
+                <circle id="spinner" cx="50" cy="50" r="45" />
+            </svg>
+        </div>
+    </div>
+
+
     <nav>
         <ul>
             <div class="left">
@@ -44,7 +58,7 @@
                 <p>Explore a variety of engaging websites.</p>
                 <a href="#websites" class="cta-button" data-target="websites">Explore Now</a>
             </div>
-        </section>        
+        </section>
 
         <section id="websites">
             <h2>Our Websites</h2>
@@ -103,7 +117,7 @@
         });
 
         document.querySelectorAll('nav ul li a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
 
                 const targetId = this.getAttribute('href').substring(1);
@@ -125,6 +139,14 @@
                 }
             });
         });
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.classList.remove('loading');
+                document.getElementById('loadingScreen').style.display = 'none';
+            }, 4000);
+        });
+
     </script>
 </body>
 
